@@ -40,8 +40,8 @@ const App = (props) =>
                 <input type="text" placeholder="🔎搜索" />
             </section>
             <section className="message">
-                {Array.from({ length: 30 }).map(it =>
-                    <article className="row-flex">
+                {Array.from({ length: 30 }).map((it, key) =>
+                    <article key={key} className="row-flex">
                         <img src={gentooImgSrc} alt="" />
                         <div className="middle">
                             <h6>LFS/Gentoo/Arch</h6>
@@ -56,8 +56,8 @@ const App = (props) =>
             </section>
         </main>
         <footer className="row-flex">
-            {Array.from({ length: 3 }).map(it =>
-                <figure>
+            {Array.from({ length: 3 }).map((it, key) =>
+                <figure key={key}>
                     <img src={linkSrc} alt="" />
                     <figcaption>消息</figcaption>
                     <div className="message-count">99+</div>
