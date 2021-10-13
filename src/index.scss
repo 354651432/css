@@ -1,23 +1,35 @@
-:root {
-    font-size: 10px;
-}
-
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
 
+// for easy to compute rem to px
+:root {
+    font-size: 10px;
+}
+
 body {
-    margin   : 0;
-    font-size: 1.6rem;
+    margin     : 0;
+    font-size  : 1.6rem;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    width : 1000px;
-    margin: 0 auto;
+img {
+    max-width: 100%;
 }
 
+p,
+figure {
+    margin: 0;
+}
+
+// utils
+@import "./utils.scss";
+
+// pages
 .qq {
     @import "./Items/qq.scss";
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
