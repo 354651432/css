@@ -23,12 +23,20 @@
 
     }
 
-    .message article .middle {
-        h6 {
-            color: $dark;
+    .message {
+        article .middle {
+            h6 {
+                color: $dark;
+            }
+
+            div {
+                color: lighten($color: $dark, $amount: 10);
+            }
+
+
         }
 
-        div {
+        .right time {
             color: lighten($color: $dark, $amount: 10);
         }
     }
