@@ -1,0 +1,39 @@
+&.light {
+    background-color: revert;
+    color: revert;
+    caret-color: revert;
+
+    $dark: hsl(0, 0, 35%);
+
+    .sec1,
+    header {
+        background-image: linear-gradient(90deg,
+                hsl(200deg, 90%, 80%),
+                hsl(200deg, 90%, 50%));
+        color: white;
+    }
+
+    .nickname small {
+        color: white;
+    }
+
+    main .search input {
+        background-color: hsl(0, 0, 97%);
+
+
+    }
+
+    .message article .middle {
+        h6 {
+            color: $dark;
+        }
+
+        div {
+            color: lighten($color: $dark, $amount: 10);
+        }
+    }
+
+    footer figure figcaption {
+        color: $dark;
+    }
+}

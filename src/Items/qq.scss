@@ -8,9 +8,15 @@ $lightred : hsl(0, 90%, 65%);
     display: flex;
     flex-flow: column;
     gap: 13px;
+
+    &>* {
+        padding: 0 10px;
+    }
 }
 
 header {
+    padding-top: 3px;
+
     display: flex;
     align-items: center;
     gap: 8px;
@@ -25,6 +31,8 @@ header {
 
 // first content area avator and icons on right
 .sec1 {
+    margin-top: -20px; // fix gap background issue
+    padding-top: 20px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -201,6 +209,7 @@ footer {
             right: -2.7rem;
 
             background-color: $lightred;
+            color: white;
             padding: 1px 7px;
             border-radius: 20px;
 

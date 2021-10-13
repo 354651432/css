@@ -5,7 +5,7 @@ const avatorSrc = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCB
 const linkSrc = "https://www.svgrepo.com/show/355649/discount-solid.svg"
 
 export default () =>
-    <div className="qq container">
+    <div className="qq container light">
         <header>
             <span>📢</span>
             <span>🎙</span>
