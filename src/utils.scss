@@ -1,19 +1,19 @@
 .container {
-    width : 1000px;
+    width: 1000px;
     margin: 0 auto;
 }
 
 .phone {
-    width      : min(414px, 100vw);
-    height     : min(736px, 100vh);
-    padding    : 2px 10px;
+    width: min(414px, 100vw);
+    height: min(736px, 100vh);
+    padding: 2px 10px;
     user-select: none;
 }
 
 .phone-dark {
     background-color: hsl(0, 0, 20%);
-    color           : white;
-    caret-color     : white;
+    color: white;
+    caret-color: white;
 }
 
 .row-flex {
@@ -21,6 +21,10 @@
 }
 
 .col-flex {
-    display       : flex;
+    display: flex;
     flex-direction: column;
+}
+
+.split {
+    flex: 1;
 }

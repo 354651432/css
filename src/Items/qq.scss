@@ -1,204 +1,210 @@
+// message count color
 $lightred : hsl(0, 90%, 65%);
 
 & {
     @extend .phone;
     @extend .phone-dark;
 
-    display  : flex;
+    display: flex;
     flex-flow: column;
-    gap      : 13px;
+    gap: 13px;
 }
 
 header {
-    display    : flex;
+    display: flex;
     align-items: center;
-    gap        : 3px;
+    gap: 8px;
 }
 
-header>* {
-    display: inline-block;
-    margin : 3px;
-}
-
-.split {
-    flex: 1;
-}
-
+// network speed tool
 .spead {
-    display  : flex;
+    display: flex;
     flex-flow: column;
     font-size: 0.001rem;
 }
 
+// first content area avator and icons on right
 .sec1 {
-    display    : flex;
+    display: flex;
     align-items: center;
-    gap        : 8px;
+    gap: 8px;
 }
 
+// avator
 .avator {
-    position  : relative;
+    position: relative;
     margin-top: 6px;
-    width     : fit-content;
+    width: fit-content;
+
+    img {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 50%;
+    }
+
+    figcaption {
+        position: absolute;
+        background-color: rgb(211, 79, 79);
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        top: 1px;
+        right: 1px;
+    }
 }
 
-.avator img {
-    width          : 36px;
-    height         : 36px;
-    object-fit     : cover;
-    object-position: center center;
-    border-radius  : 50%;
-}
-
-.avator figcaption {
-    position        : absolute;
-    background-color: rgb(211, 79, 79);
-    width           : 7px;
-    height          : 7px;
-    border-radius   : 50%;
-    top             : 1px;
-    right           : 1px;
-}
-
+// nickname area after avator
 .nickname {
-    display  : flex;
-    flex-flow: column;
+    @extend .col-flex;
+
+    h2 {
+        font-size: 0.5rem;
+    }
+
+    small {
+        color: lightgray;
+        font-size: 8px;
+    }
+
+    // a green dot before qq WIFI status
+    .green-dot {
+        width: 1rem;
+        height: 1rem;
+        background-color: lightgreen;
+        display: inline-block;
+        border-radius: 50%;
+    }
 }
 
-.nickname h2 {
-    font-size: 0.5rem;
-}
-
-.nickname small {
-    color    : lightgray;
-    font-size: 8px;
-}
-
-.green-dot {
-    width           : 1rem;
-    height          : 1rem;
-    background-color: lightgreen;
-    display         : inline-block;
-    border-radius   : 50%;
-}
-
+// search input and messages , scroll area
 main {
-    flex         : 1;
-    overflow-y   : scroll;
+    flex: 1;
+    overflow-y: scroll;
     padding-right: 1.1rem;
 
     transition: all 2s linear;
+
+    &::-webkit-scrollbar {
+        display: block;
+        width: 6px;
+        overflow: auto;
+        // background-color: hsl(0, 0, 0.1);
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: lightcyan;
+        border-radius: 10px;
+    }
+
+    .search input {
+        width: 100%;
+        height: 3rem;
+        line-height: 3rem;
+        border-radius: 1rem;
+        background-color: hsl(0, 0, 30%);
+        border: unset;
+
+        text-align: center;
+        color: inherit;
+        font-weight: bold;
+    }
+
+    .search input:focus {
+        outline: none;
+    }
 }
 
-main::-webkit-scrollbar {
-    display            : block;
-    width              : 6px;
-    overflow           : auto;
-    // background-color: hsl(0, 0, 0.1);
-}
-
-main:hover::-webkit-scrollbar-thumb {
-    background-color: lightcyan;
-    border-radius   : 10px;
-}
-
-section.search input {
-    width           : 100%;
-    height          : 3rem;
-    line-height     : 3rem;
-    border-radius   : 1rem;
-    background-color: hsl(0, 0, 30%);
-    border          : unset;
-
-    text-align : center;
-    color      : inherit;
-    font-weight: bold;
-}
-
-section.search input:focus {
-    outline: none;
-}
-
+// messages container
 .message {
-    margin-top: 2rem;
     @extend .col-flex;
+
+    margin-top: 2rem;
     gap: 1.1rem;
 }
 
+// mesage item
 .message article {
     display: flex;
-    gap    : 1.3rem;
-}
+    gap: 1.3rem;
 
-.message article img {
-    width        : 4rem;
-    height       : 4rem;
-    border-radius: 50%;
-}
-
-.message .middle {
-    h6 {
-        margin   : 0;
-        font-size: 1.8rem;
-        color    : hsl(0, 0, 90%);
+    // leftest img
+    img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
     }
 
-    div {
-        font-size: 10px;
-        color    : lightgray;
+    // message sender and last message content
+    .middle {
+        h6 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: hsl(0, 0, 90%);
+        }
+
+        div {
+            font-size: 10px;
+            color: lightgray;
+        }
+    }
+
+    // message recived time and message count
+    .right {
+        gap: 1.3rem;
+        flex: 1;
+        text-align: right;
+
+        time {
+            color: lightgray;
+            font-size: 1rem;
+        }
+
+        .message-count {
+            background-color: $lightred;
+            color: white;
+            font-weight: bold;
+
+            padding: 1px 9px;
+            border-radius: 9px;
+            width: fit-content;
+            margin-left: auto;
+            font-size: 1rem;
+        }
     }
 }
 
-.message .right {
-    gap       : 1.3rem;
-    flex      : 1;
-    text-align: right;
 
-    time {
-        color    : lightgray;
-        font-size: 1rem;
-    }
-
-    .message-count {
-        background-color: $lightred;
-        color           : white;
-        font-weight     : bold;
-
-        padding      : 1px 9px;
-        border-radius: 9px;
-        width        : fit-content;
-        margin-left  : auto;
-        font-size    : 1rem;
-    }
-}
-
+// three navs on footer
 footer {
     justify-content: space-around;
 
     figure {
-        position  : relative;
+        position: relative;
         text-align: center;
 
         img {
-            width : 3.5rem;
+            width: 3.5rem;
             height: 3.5rem;
         }
 
         figcaption {
             font-size: 1rem;
-            color    : hsl(0, 0, 90%);
+            color: hsl(0, 0, 90%);
         }
 
+        // all message count
         .message-count {
             position: absolute;
-            top     : -8px;
-            right   : -2.7rem;
+            top: -8px;
+            right: -2.7rem;
 
             background-color: $lightred;
-            padding         : 1px 7px;
-            border-radius   : 20px;
+            padding: 1px 7px;
+            border-radius: 20px;
 
-            font-size  : 8px;
+            font-size: 8px;
             font-weight: bold;
         }
     }
