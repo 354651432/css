@@ -1,4 +1,6 @@
 &.light {
+    box-shadow: 0 0 10px lightgray;
+
     background-color: revert;
     color: revert;
     caret-color: revert;
@@ -41,7 +43,11 @@
         }
     }
 
-    footer figure figcaption {
-        color: $dark;
+    footer {
+        background-color: lighten($color: lightgray, $amount: 17);
+
+        figure figcaption {
+            color: $dark;
+        }
     }
 }
