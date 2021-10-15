@@ -24,13 +24,21 @@ figure {
     margin: 0;
 }
 
+input {
+    min-width: 0;
+}
+
 // utils
 @import "./utils.scss";
 
 // pages
 .qq {
-    @import "./Items/qq.scss";
-    @import "./Items/qq-light.scss";
+    @import "./Items/qq/index.scss";
+    @import "./Items/qq/light.scss";
+}
+
+.alipay {
+    @import "./Items/alipay/index.scss";
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
